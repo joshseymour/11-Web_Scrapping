@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p>Let's get some fun facts, news and images about Mars before we set off on our trip to the red plant!</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12">
+            <h3>Latest News about Mars</h3>
+            <p>{{ mars.news.news_title }}</p>
+            <p>{{ mars.news.mars_p }}</p>
+        </div>
+        <div class="col-md-8 col-sm-12">
+            <h3>Room with a view</h3>
+            <img src="{{ mars.image  }}">
+        </div>
+        <div class="col-md-4 col-sm-12">
+            <div class="row">
+                <h3>Current Weather on Mars is:</h3>
+                <p>{{ mars.weather }}</p>
+            </div>
+            <div class="row">
+                <h3>Mars Facts</h3>
+                <table src=" {{ mars.facts }}"></table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <h3>{{ mars.hemisphere[0].title }}</h3>
+            <img src="{{ mars.hemisphere[0].img_url }}">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h3>{{ mars.hemisphere[1].title }}</h3>
+            <img src="{{ mars.hemisphere[1].img_url }}">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h3>{{ mars.hemisphere[2].title }}</h3>
+            <img src="{{ mars.hemisphere[2].img_url }}">
+        </div>
+        <div class="col-md-6 col-sm-12">
+            <h3>{{ mars.hemisphere[3].title }}</h3>
+            <img src="{{ mars.hemisphere[3].img_url }}">
+        </div>
+    </div>
+  </div>
+</body>
+
+</html>

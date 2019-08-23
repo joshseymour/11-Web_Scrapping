@@ -5,7 +5,7 @@ import time
 
 def init_browser():
     # @NOTE: Replace the path with your actual path to the chromedriver
-    executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
+    #executable_path = {"executable_path": "/usr/local/bin/chromedriver"}
     #Note: had to remove executable path due to issue with the way chromedriver is loaded.  
     #It creates 2 versions of the app, which causes conflict when running.  If running on local PC, uncomment executable_path
     # and add **executable_path between "chrome" and headless
@@ -13,7 +13,7 @@ def init_browser():
 
 #Mars News Data
 #Scrape the first news article https://mars.nasa.gov/news and get the first result
-def scrape():
+def scrape_info():
     browser = init_browser()
 
     # Visit https://mars.nasa.gov/news
@@ -101,6 +101,7 @@ def scrape():
     tables.columns = ['Description', 'Value']
     space_facts = tables.iloc[1:]
     space_facts.set_index('Description', inplace=True)
+    html_table = space_facts.to_html()
 
     #HEMISPHERES
     # Get the image path for the article
@@ -151,7 +152,7 @@ def scrape():
     "news": mars_news, 
     "image": featured_img_url,
     "weather": mars_weather,
-    "facts": space_facts,
+    "facts": html_table,
     "hemisphere": hemisphere_image_url    
     }
       
