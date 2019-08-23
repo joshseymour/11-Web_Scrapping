@@ -104,7 +104,7 @@ def scrape():
 
     #HEMISPHERES
     # Get the image path for the article
-        browser = init_browser()
+    browser = init_browser()
 
     #create list of links to click through with browser.click_link_by_partial_text
     sites = ['Cerberus Hemisphere Enhanced', 'Schiaparelli Hemisphere Enhanced', 'Syrtis Major Hemisphere Enhanced', 'Valles Marineris Hemisphere Enhanced']
