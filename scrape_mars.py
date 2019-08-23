@@ -136,15 +136,23 @@ def scrape():
                 }
             hemisphere_image_url.append(hemisphere)
             
-        except Exception as e:
+        except:
             hemisphere_image_url.append({
-                "title": null,
-                "img_url": null
+                "title": None,
+                "img_url": None
                 }) 
         
         browser.back()
     
     # Close the browser after scraping
     browser.quit()
-    
+
+    mars_data = {
+    "news": mars_news, 
+    "image": featured_img_url,
+    "weather": mars_weather,
+    "facts": space_facts,
+    "hemisphere": hemisphere_image_url    
+    }
+      
     return mars_data
