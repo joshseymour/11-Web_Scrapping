@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="/static/css/style.css"> -->
 </head>
 
 <body>
@@ -19,12 +20,12 @@
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <h3>Latest News about Mars</h3>
-            <p>{{ mars.news.news_title }}</p>
+            <p><strong>{{ mars.news.news_title }}</strong></p>
             <p>{{ mars.news.mars_p }}</p>
         </div>
         <div class="col-md-8 col-sm-12">
-            <h3>Room with a view</h3>
-            <img src="{{ mars.image  }}">
+            <h3>Check Out The View!</h3>
+            <img src="{{ mars.image  }}" style="width:900px;height:auto">
         </div>
         <div class="col-md-4 col-sm-12">
             <div class="row">
@@ -33,26 +34,29 @@
             </div>
             <div class="row">
                 <h3>Mars Facts</h3>
-                <table src=" {{ mars.facts }}"></table>
+                <div> {{ mars.facts | safe}}</div>
             </div>
         </div>
     </div>
     <div class="row">
+        <div class="col-md-12 col-sm-12 center-block text-center">
+            <h1>Hemisphere</h1>
+        </div>
         <div class="col-md-6 col-sm-12">
             <h3>{{ mars.hemisphere[0].title }}</h3>
-            <img src="{{ mars.hemisphere[0].img_url }}">
+            <img src="{{ mars.hemisphere[0].img_url }}" style="width:600px;height:auto">
         </div>
         <div class="col-md-6 col-sm-12">
             <h3>{{ mars.hemisphere[1].title }}</h3>
-            <img src="{{ mars.hemisphere[1].img_url }}">
+            <img src="{{ mars.hemisphere[1].img_url }}" style="width:600px;height:auto">
         </div>
         <div class="col-md-6 col-sm-12">
             <h3>{{ mars.hemisphere[2].title }}</h3>
-            <img src="{{ mars.hemisphere[2].img_url }}">
+            <img src="{{ mars.hemisphere[2].img_url }}" style="width:600px;height:auto">
         </div>
         <div class="col-md-6 col-sm-12">
             <h3>{{ mars.hemisphere[3].title }}</h3>
-            <img src="{{ mars.hemisphere[3].img_url }}">
+            <img src="{{ mars.hemisphere[3].img_url }}" style="width:600px;height:auto">
         </div>
     </div>
   </div>
